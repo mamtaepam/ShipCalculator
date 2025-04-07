@@ -8,4 +8,9 @@
     <ProjectReference Include="..\Ship.Cal.Domain\Ship.Cal.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ContractInfra\" />
+    <Folder Include="DTO\" />
+  </ItemGroup>
+
 </Project>

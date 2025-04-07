@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Ship.Cal.Application.ContractInfra;
 using Ship.Cal.Application.DepandantService;
 using Ship.Cal.Application.Implementation;
+using Ship.Cal.Domain;
+using Ship.Cal.Domain.Contract;
 using Ship.Cal.Infra.DbRepo;
 using Ship.Cal.Infra.Implementation;
 
@@ -35,9 +37,9 @@ namespace ShipCalculator
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
-                    builder.AllowAnyOrigin()    // Allow any origin
-                           .AllowAnyHeader()    // Allow any headers
-                           .AllowAnyMethod());  // Allow any HTTP method (GET, POST, etc.)
+                    builder.AllowAnyOrigin()    
+                           .AllowAnyHeader()    
+                           .AllowAnyMethod());  
             });
 
 
@@ -45,8 +47,10 @@ namespace ShipCalculator
 
             services.AddScoped<IShipCalculatorService, ShipCalculatorService>();
             services.AddScoped<IShippingRepo, ShippingRepo>();
+            services.AddScoped<IShippingCalculator, ShippingCalculator>();
             services.AddSwaggerGen();
             services.AddControllers();
+ 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
