@@ -1,0 +1,12 @@
+<div *ngIf="response">
+  <h3>Shipping Summary</h3>
+  <p><strong>Subtotal:</strong> {{  response.subtotal }}</p>
+  <p><strong>Taxes:</strong> {{ response.taxes }}</p>
+  <p><strong>Shipping:</strong> {{ response.shipping  }}</p>
+
+  <p><strong>Total Amount Due:</strong> {{ response.totalAmountDue }}</p>
+</div>
+<!-- <pre>{{ response | json }}</pre>
+<div *ngIf="!response">
+  <p>Loading shipping summary...</p>
+</div> -->
