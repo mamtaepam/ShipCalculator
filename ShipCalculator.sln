@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipCalculator", "ShipCalculator\ShipCalculator.csproj", "{CAAFBC2C-EEF5-42B0-894A-7A41C585F76A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{C23FCC13-403E-4569-BBA1-EE8FC2BA2E21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{FB04E15F-460B-4246-AE6F-06A2B41CBC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ship.Cal.Application", "Ship.Cal.Application\Ship.Cal.Application.csproj", "{5523B0A4-B924-4215-8BA5-0182B2D36205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ship.Cal.Domain", "Ship.Cal.Domain\Ship.Cal.Domain.csproj", "{22397C13-7E76-48BB-9944-C12A8096B951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ship.Cal.Infra", "Ship.Cal.Infra\Ship.Cal.Infra.csproj", "{267F54B9-DCFE-48CC-8252-575B20ECC810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ship.Cal.InfraHelper", "Ship.Cal.InfraHelper\Ship.Cal.InfraHelper.csproj", "{15D36C30-7392-432B-8ED9-4D00EBCB8DED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAAFBC2C-EEF5-42B0-894A-7A41C585F76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAFBC2C-EEF5-42B0-894A-7A41C585F76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAFBC2C-EEF5-42B0-894A-7A41C585F76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAFBC2C-EEF5-42B0-894A-7A41C585F76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5523B0A4-B924-4215-8BA5-0182B2D36205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5523B0A4-B924-4215-8BA5-0182B2D36205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5523B0A4-B924-4215-8BA5-0182B2D36205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5523B0A4-B924-4215-8BA5-0182B2D36205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22397C13-7E76-48BB-9944-C12A8096B951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22397C13-7E76-48BB-9944-C12A8096B951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22397C13-7E76-48BB-9944-C12A8096B951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22397C13-7E76-48BB-9944-C12A8096B951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{267F54B9-DCFE-48CC-8252-575B20ECC810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267F54B9-DCFE-48CC-8252-575B20ECC810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267F54B9-DCFE-48CC-8252-575B20ECC810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267F54B9-DCFE-48CC-8252-575B20ECC810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D36C30-7392-432B-8ED9-4D00EBCB8DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D36C30-7392-432B-8ED9-4D00EBCB8DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D36C30-7392-432B-8ED9-4D00EBCB8DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D36C30-7392-432B-8ED9-4D00EBCB8DED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5523B0A4-B924-4215-8BA5-0182B2D36205} = {C23FCC13-403E-4569-BBA1-EE8FC2BA2E21}
+		{22397C13-7E76-48BB-9944-C12A8096B951} = {C23FCC13-403E-4569-BBA1-EE8FC2BA2E21}
+		{267F54B9-DCFE-48CC-8252-575B20ECC810} = {FB04E15F-460B-4246-AE6F-06A2B41CBC55}
+		{15D36C30-7392-432B-8ED9-4D00EBCB8DED} = {FB04E15F-460B-4246-AE6F-06A2B41CBC55}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0823C0B6-14FF-4887-A8CD-6C2EC48C8989}
+	EndGlobalSection
+EndGlobal
