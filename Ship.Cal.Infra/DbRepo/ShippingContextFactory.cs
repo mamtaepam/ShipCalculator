@@ -9,8 +9,8 @@ public class ShippingContextFactory : IDesignTimeDbContextFactory<ShippingContex
     public ShippingContext CreateDbContext(string[] args)
     {
         var configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())  // Set base path to current directory
-            .AddJsonFile("appsettings.json")               // Add your appsettings.json file
+            .SetBasePath(Directory.GetCurrentDirectory())  
+            .AddJsonFile("appsettings.json")               
             .Build();
 
         var optionsBuilder = new DbContextOptionsBuilder<ShippingContext>();

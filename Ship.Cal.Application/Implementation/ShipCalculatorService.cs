@@ -1,4 +1,5 @@
-﻿using Ship.Cal.Application.DepandantService;
+﻿using Ship.Cal.Application.ContractInfra;
+using Ship.Cal.Application.DepandantService;
 using Ship.Cal.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,49 @@ namespace Ship.Cal.Application.Implementation
 {
     public class ShipCalculatorService : IShipCalculatorService
     {
-        public ShippingResponse CalculateTotal(List<Product> products, int quantity, Country country)
+        private readonly IShippingRepo _shippingRepo;
+        public ShipCalculatorService(IShippingRepo shippingRepo) 
         {
-            decimal subtotal = products.Sum(p => p.Price * quantity);
-            decimal taxes = subtotal * country.TaxRate / 100;
+            _shippingRepo = shippingRepo;
+        }  
 
-            decimal totalWeight = products.Sum(p => p.Weight) * quantity;
+        public ShippingResponse CalculateTotal(ShippingRequest request)
+        {
+            var productList = _shippingRepo.GetProducts(request.ProdDetails.ProductIds);
+
+            var selectedProducts = productList.Where(p => request.ProdDetails.ProductIds.Contains(p.Id)).ToList();
+           
+            var country= _shippingRepo.GetCountry(request.CountryId);
+
+            decimal subtotal = 0;
+            for (int i = 0; i < selectedProducts.Count; i++)
+            {
+                
+                var product = selectedProducts[i];
+                var quantity = request.ProdDetails.Quantities[i];  
+                subtotal += product.Price * quantity;
+            }
+
+  
+            decimal taxes = subtotal * country.TaxRate;
+
+
+            decimal totalWeight = 0;
+            for (int i = 0; i < selectedProducts.Count; i++)
+            {
+                var product = selectedProducts[i];
+                var quantity = request.ProdDetails.Quantities[i];
+                totalWeight += product.Weight * quantity;
+            }
+
             decimal shipping = country.BaseShippingCost;
 
             if (totalWeight > 5)
             {
-                shipping += (totalWeight - 5) * 2; // Add surcharge for weight over 5kg
+                shipping += (totalWeight - 5) * 2;  
             }
 
-            if (subtotal >= country.FreeShippingThreshold)
-            {
-                shipping = 0; // Free shipping
-            }
+            decimal totalAmountDue = subtotal + taxes + shipping;
 
             ShippingResponse response = new ShippingResponse
             {

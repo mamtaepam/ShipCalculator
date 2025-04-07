@@ -9,6 +9,6 @@ namespace Ship.Cal.Application.DepandantService
 {
     public interface IShipCalculatorService
     {
-        public ShippingResponse CalculateTotal(List<Product> products, int quantity, Country country);
+        public ShippingResponse CalculateTotal(ShippingRequest products);
     }
 }

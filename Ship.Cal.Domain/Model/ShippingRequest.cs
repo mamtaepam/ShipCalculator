@@ -8,8 +8,14 @@ namespace Ship.Cal.Domain.Model
 {
     public class ShippingRequest
     {
-        public List<int> ProductIds { get; set; }
+        public Products ProdDetails { get; set; }
         public int CountryId { get; set; }
         public int Quantity { get; set; }
+    }
+
+    public class Products
+    {
+        public List<int> ProductIds { get; set; }     // List of product IDs
+        public List<int> Quantities { get; set; }
     }
 }

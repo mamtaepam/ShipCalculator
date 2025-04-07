@@ -25,15 +25,8 @@ namespace ShipCalculator
         [HttpPost("calculate")]
         public ActionResult<ShippingResponse> CalculateShipping([FromBody] ShippingRequest request)
         {
-            var products = _shippingRepository.GetProducts(request.ProductIds);
-            var country = _shippingRepository.GetCountry(request.CountryId);
 
-            if (country == null)
-            {
-                return NotFound("Country not found.");
-            }
-
-            ShippingResponse totalAmount = _shippingCalculatorService.CalculateTotal(products, request.Quantity, country);
+            ShippingResponse totalAmount = _shippingCalculatorService.CalculateTotal(request);
 
             var response = new ShippingResponse
             {
