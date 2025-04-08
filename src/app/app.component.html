@@ -1,0 +1,19 @@
+
+
+
+<div class="app-container">
+
+    <app-country-selector (countrySelected)="onCountrySelected($event)"></app-country-selector>
+  
+    <app-product-selector 
+      [selectedCountryId]="countryId" 
+      (shippingResponse)="onShippingResponse($event)">
+    </app-product-selector>
+  
+    <app-shipping-summary [response]="shippingResponse"></app-shipping-summary>
+
+  </div>
+  
+  
+
+
